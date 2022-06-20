@@ -1,4 +1,14 @@
 {
+  "pages": [
+    {
+      "id": "Customer Data",
+      "isDefault": false
+    },
+    {
+      "id": "Send Messages",
+      "isDefault": true
+    }
+  ],
   "viewMode": false,
   "appIsExample": false,
   "unreadCommentThreads": 0,
@@ -7,9 +17,5 @@
   "evaluationVersion": 2,
   "applicationVersion": 1,
   "isManualUpdate": false,
-  "createdAt": {
-    "seconds": 1650864243,
-    "nanos": 671000000
-  },
   "deleted": false
 }

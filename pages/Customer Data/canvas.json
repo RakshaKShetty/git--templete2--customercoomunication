@@ -1316,46 +1316,8 @@
             }
           ]
         ],
-        "widgetNames": [
-          "Alert_text",
-          "Button1",
-          "Button4",
-          "Canvas1",
-          "Canvas1Copy",
-          "Canvas3",
-          "Canvas4",
-          "Canvas5",
-          "Container1",
-          "Container1Copy",
-          "Container2",
-          "Delete_Button",
-          "Delete_Modal",
-          "IconButton1",
-          "Image1Copy",
-          "Insert_Modal",
-          "MainContainer",
-          "Switch1",
-          "Switch2",
-          "Text12",
-          "Text13Copy",
-          "Text15",
-          "Text16",
-          "Text1Copy",
-          "Text20",
-          "Text9",
-          "data_table",
-          "insert_button",
-          "insert_col_input1",
-          "insert_col_input2",
-          "insert_col_input3",
-          "key_select",
-          "order_select",
-          "reset_button",
-          "reset_update_button",
-          "update_button",
-          "update_col_1",
-          "update_col_2",
-          "update_col_3"
+        "mongoEscapedWidgetNames": [
+          "data_table"
         ],
         "validOnPageLoadActions": true,
         "id": "Customer Data",
@@ -1369,6 +1331,5 @@
     "isHidden": false
   },
   "deleted": false,
-  "policies": [],
   "gitSyncId": "61efa094be698f35db5519a1_61fb9c012cd3d95ca414b251"
 }
