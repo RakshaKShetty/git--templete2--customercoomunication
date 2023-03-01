@@ -17,6 +17,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
+      "selfReferencingDataPaths": [],
       "formData": {
         "body": {
           "data": "{\n  \"count\": \"customers\",\n  \"filter\": {\n    \"UsersDoNotDisturb\": 1\n\t}\n}\n",

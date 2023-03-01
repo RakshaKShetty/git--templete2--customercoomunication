@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "mongo-plugin",
   "unpublishedAction": {
-    "name": "GetCustomerList",
+    "name": "GetMarketingList",
     "datasource": {
       "pluginId": "mongo-plugin",
       "messages": [],
@@ -17,11 +17,12 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
+      "selfReferencingDataPaths": [],
       "formData": {
         "collection": {
-          "data": "Customers",
+          "data": "MailingList",
           "viewType": "component",
-          "componentData": "Customers"
+          "componentData": "MailingList"
         },
         "command": {
           "data": "FIND",
@@ -30,19 +31,24 @@
         },
         "find": {
           "query": {
-            "data": "{CustomerID: {$in: {{List1.selectedItem.Users}}}}",
+            "data": "",
             "viewType": "component",
-            "componentData": "{CustomerID: {$in: {{List1.selectedItem.Users}}}}"
+            "componentData": ""
           },
           "limit": {
-            "data": "100",
+            "data": "4",
             "viewType": "component",
-            "componentData": "100"
+            "componentData": "4"
+          },
+          "skip": {
+            "data": "{{(List1.pageNo-1)*List1.pageSize}}",
+            "viewType": "component",
+            "componentData": "{{(List1.pageNo-1)*List1.pageSize}}"
           },
           "sort": {
-            "data": "{CustomerID:1}",
+            "data": "{_id:-1}",
             "viewType": "component",
-            "componentData": "{CustomerID:1}"
+            "componentData": "{_id:-1}"
           }
         },
         "smartSubstitution": {
@@ -52,24 +58,24 @@
         }
       }
     },
-    "executeOnLoad": false,
+    "executeOnLoad": true,
     "dynamicBindingPathList": [
       {
-        "key": "formData.find.query.data"
+        "key": "formData.find.skip.data"
       }
     ],
     "isValid": true,
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "List1.selectedItem.Users"
+      "(List1.pageNo-1)*List1.pageSize"
     ],
-    "userSetOnLoad": true,
+    "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Send Messages_GetCustomerList",
+  "id": "Send Messages_GetMarketingList",
   "deleted": false,
-  "gitSyncId": "61efa094be698f35db5519a1_61fa251e2cd3d95ca4148d9b"
+  "gitSyncId": "61efa094be698f35db5519a1_61fa24b72cd3d95ca4148d36"
 }

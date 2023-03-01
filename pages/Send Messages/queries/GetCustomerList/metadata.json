@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "mongo-plugin",
   "unpublishedAction": {
-    "name": "NumberOfCustomers",
+    "name": "GetCustomerList",
     "datasource": {
       "pluginId": "mongo-plugin",
       "messages": [],
@@ -17,21 +17,34 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
+      "selfReferencingDataPaths": [],
       "formData": {
-        "body": {
-          "data": "{\"count\": \"Customers\"}\n",
-          "viewType": "component",
-          "componentData": "{\"count\": \"Customers\"}\n"
-        },
         "collection": {
           "data": "Customers",
           "viewType": "component",
           "componentData": "Customers"
         },
         "command": {
-          "data": "RAW",
+          "data": "FIND",
           "viewType": "component",
-          "componentData": "RAW"
+          "componentData": "FIND"
+        },
+        "find": {
+          "query": {
+            "data": "{CustomerID: {$in: {{List1.selectedItem.Users}}}}",
+            "viewType": "component",
+            "componentData": "{CustomerID: {$in: {{List1.selectedItem.Users}}}}"
+          },
+          "limit": {
+            "data": "100",
+            "viewType": "component",
+            "componentData": "100"
+          },
+          "sort": {
+            "data": "{CustomerID:1}",
+            "viewType": "component",
+            "componentData": "{CustomerID:1}"
+          }
         },
         "smartSubstitution": {
           "data": true,
@@ -40,18 +53,24 @@
         }
       }
     },
-    "executeOnLoad": true,
-    "dynamicBindingPathList": [],
+    "executeOnLoad": false,
+    "dynamicBindingPathList": [
+      {
+        "key": "formData.find.query.data"
+      }
+    ],
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [],
-    "userSetOnLoad": false,
+    "jsonPathKeys": [
+      "List1.selectedItem.Users"
+    ],
+    "userSetOnLoad": true,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Send Messages_NumberOfCustomers",
+  "id": "Send Messages_GetCustomerList",
   "deleted": false,
-  "gitSyncId": "61efa094be698f35db5519a1_61fa46962cd3d95ca41492b0"
+  "gitSyncId": "61efa094be698f35db5519a1_61fa251e2cd3d95ca4148d9b"
 }

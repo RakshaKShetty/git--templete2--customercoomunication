@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "addList",
-    "fullyQualifiedName": "Utils.addList",
+    "name": "sendMessages",
+    "fullyQualifiedName": "Utils.sendMessages",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -20,7 +20,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n\t\tconst a =\"We have created a new list\".concat(List_Name.text);\n\t\tAddNewList.run();\n\t\tshowAlert(a,'success');\n\t\tresetWidget(\"mailingListModal\");\n\t\tGetMarketingList.run();\n\t\tcloseModal(\"mailingListModal\");\n\t}",
+      "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": true
     },
@@ -33,15 +33,12 @@
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [
-      "() => {\n\t\tconst a =\"We have created a new list\".concat(List_Name.text);\n\t\tAddNewList.run();\n\t\tshowAlert(a,'success');\n\t\tresetWidget(\"mailingListModal\");\n\t\tGetMarketingList.run();\n\t\tcloseModal(\"mailingListModal\");\n\t}"
-    ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Send Messages_Utils.addList",
+  "id": "Send Messages_Utils.sendMessages",
   "deleted": false,
-  "gitSyncId": "61efa094be698f35db5519a1_6215da042882606a1df5c706"
+  "gitSyncId": "61efa094be698f35db5519a1_61f8de239d6d6a6720c9ba6b"
 }

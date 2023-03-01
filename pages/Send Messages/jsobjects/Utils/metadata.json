@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Utils",
+    "pageId": "Send Messages",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Send Messages_Utils",
+  "deleted": false,
+  "gitSyncId": "61efa094be698f35db5519a1_61f8de0e9d6d6a6720c9ba69"
+}

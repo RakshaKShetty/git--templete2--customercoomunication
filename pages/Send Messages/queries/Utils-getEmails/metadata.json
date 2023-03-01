@@ -20,7 +20,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "() => {\n\t\tvar nameArray = Table1.selectedRows.map(function (el) { return el.CustomerEmailID; });\n\t\treturn nameArray.toString();\n\t}",
+      "selfReferencingDataPaths": [],
       "jsArguments": [],
       "isAsync": false
     },
@@ -33,9 +33,6 @@
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [
-      "() => {\n\t\tvar nameArray = Table1.selectedRows.map(function (el) { return el.CustomerEmailID; });\n\t\treturn nameArray.toString();\n\t}"
-    ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],

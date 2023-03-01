@@ -33,6 +33,7 @@
       "queryParameters": [],
       "body": "{\n\"content\" : {{DiscordText.text}}\n}",
       "httpMethod": "POST",
+      "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
           "value": true

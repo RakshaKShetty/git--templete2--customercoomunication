@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "mongo-plugin",
   "unpublishedAction": {
-    "name": "allCustomerList",
+    "name": "NumberOfCustomers",
     "datasource": {
       "pluginId": "mongo-plugin",
       "messages": [],
@@ -17,33 +17,22 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
+      "selfReferencingDataPaths": [],
       "formData": {
+        "body": {
+          "data": "{\"count\": \"Customers\"}\n",
+          "viewType": "component",
+          "componentData": "{\"count\": \"Customers\"}\n"
+        },
         "collection": {
           "data": "Customers",
           "viewType": "component",
           "componentData": "Customers"
         },
         "command": {
-          "data": "FIND",
+          "data": "RAW",
           "viewType": "component",
-          "componentData": "FIND"
-        },
-        "find": {
-          "query": {
-            "data": "{\"UsersDoNotDisturb\":0}",
-            "viewType": "component",
-            "componentData": "{\"UsersDoNotDisturb\":0}"
-          },
-          "limit": {
-            "data": "100",
-            "viewType": "component",
-            "componentData": "100"
-          },
-          "sort": {
-            "data": "{CustomerID:1}",
-            "viewType": "component",
-            "componentData": "{CustomerID:1}"
-          }
+          "componentData": "RAW"
         },
         "smartSubstitution": {
           "data": true,
@@ -63,7 +52,7 @@
     "policies": [],
     "userPermissions": []
   },
-  "id": "Send Messages_allCustomerList",
+  "id": "Send Messages_NumberOfCustomers",
   "deleted": false,
-  "gitSyncId": "61efa094be698f35db5519a1_6214c670da926877eb2755e0"
+  "gitSyncId": "61efa094be698f35db5519a1_61fa46962cd3d95ca41492b0"
 }

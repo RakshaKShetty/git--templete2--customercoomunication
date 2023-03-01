@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "mongo-plugin",
   "unpublishedAction": {
-    "name": "NumberOfMailinglists",
+    "name": "DeleteQuery",
     "datasource": {
       "pluginId": "mongo-plugin",
       "messages": [],
@@ -12,26 +12,35 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "Send Messages",
+    "pageId": "Customer Data",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
+      "path": "template_table/{{data_table.selectedRow._ref}}",
       "encodeParamsToggle": true,
+      "selfReferencingDataPaths": [],
       "formData": {
-        "body": {
-          "data": "{\"count\": \"MailingList\"}\n",
-          "viewType": "component",
-          "componentData": "{\"count\": \"MailingList\"}\n"
-        },
         "collection": {
-          "data": "MailingList",
+          "data": "Customers",
           "viewType": "component",
-          "componentData": "MailingList"
+          "componentData": "Customers"
         },
         "command": {
-          "data": "RAW",
+          "data": "DELETE",
           "viewType": "component",
-          "componentData": "RAW"
+          "componentData": "DELETE"
+        },
+        "delete": {
+          "query": {
+            "data": "{ _id: ObjectId('{{data_table.triggeredRow._id}}') }",
+            "viewType": "component",
+            "componentData": "{ _id: ObjectId('{{data_table.triggeredRow._id}}') }"
+          },
+          "limit": {
+            "data": "SINGLE",
+            "viewType": "component",
+            "componentData": "SINGLE"
+          }
         },
         "smartSubstitution": {
           "data": true,
@@ -41,17 +50,19 @@
       }
     },
     "executeOnLoad": false,
-    "dynamicBindingPathList": [],
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [],
+    "jsonPathKeys": [
+      "data_table.selectedRow._ref",
+      "data_table.triggeredRow._id"
+    ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Send Messages_NumberOfMailinglists",
+  "id": "Customer Data_DeleteQuery",
   "deleted": false,
-  "gitSyncId": "61efa094be698f35db5519a1_621c4172445a8d746a060d4a"
+  "gitSyncId": "61efa094be698f35db5519a1_61fb9c142cd3d95ca414b256"
 }

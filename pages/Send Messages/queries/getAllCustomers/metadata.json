@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "mongo-plugin",
   "unpublishedAction": {
-    "name": "GetMarketingList",
+    "name": "getAllCustomers",
     "datasource": {
       "pluginId": "mongo-plugin",
       "messages": [],
@@ -17,11 +17,17 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
+      "selfReferencingDataPaths": [],
       "formData": {
-        "collection": {
-          "data": "MailingList",
+        "body": {
+          "data": "{\n  \"find\": \"Customers\",\n  \"filter\": {\n    \"CustomerEmailID\": \"michael.woods@email.com\"\n  },\n  \"sort\": {\n    \"_id\": 1\n  },\n  \"limit\": 10\n}\n",
           "viewType": "component",
-          "componentData": "MailingList"
+          "componentData": "{\n  \"find\": \"Customers\",\n  \"filter\": {\n    \"CustomerEmailID\": \"michael.woods@email.com\"\n  },\n  \"sort\": {\n    \"_id\": 1\n  },\n  \"limit\": 10\n}\n"
+        },
+        "collection": {
+          "data": "Customers",
+          "viewType": "component",
+          "componentData": "Customers"
         },
         "command": {
           "data": "FIND",
@@ -35,19 +41,19 @@
             "componentData": ""
           },
           "limit": {
-            "data": "4",
+            "data": "100",
             "viewType": "component",
-            "componentData": "4"
-          },
-          "skip": {
-            "data": "{{(List1.pageNo-1)*List1.pageSize}}",
-            "viewType": "component",
-            "componentData": "{{(List1.pageNo-1)*List1.pageSize}}"
+            "componentData": "100"
           },
           "sort": {
-            "data": "{_id:-1}",
+            "data": "{\"_id\": 1}",
             "viewType": "component",
-            "componentData": "{_id:-1}"
+            "componentData": "{\"_id\": 1}"
+          },
+          "projection": {
+            "data": "{\"UsersDoNotDisturb\":0}",
+            "viewType": "component",
+            "componentData": "{\"UsersDoNotDisturb\":0}"
           }
         },
         "smartSubstitution": {
@@ -57,24 +63,18 @@
         }
       }
     },
-    "executeOnLoad": true,
-    "dynamicBindingPathList": [
-      {
-        "key": "formData.find.skip.data"
-      }
-    ],
+    "executeOnLoad": false,
+    "dynamicBindingPathList": [],
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [
-      "(List1.pageNo-1)*List1.pageSize"
-    ],
+    "jsonPathKeys": [],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Send Messages_GetMarketingList",
+  "id": "Send Messages_getAllCustomers",
   "deleted": false,
-  "gitSyncId": "61efa094be698f35db5519a1_61fa24b72cd3d95ca4148d36"
+  "gitSyncId": "61efa094be698f35db5519a1_621c440a445a8d746a060d50"
 }
